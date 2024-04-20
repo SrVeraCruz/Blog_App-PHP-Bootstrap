@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  include('redirectuser.php');
   include('includes/header.php');
   include('includes/navbar.php')
 ?>
@@ -39,7 +40,7 @@
                 <input type="password" name="cpassword" required placeholder="Confirm Password" class="form-control">
               </div>
               <div class="form-group mb-3">
-                <button type="submit" name="register_btn" class="btn btn-primary">Login Now</button>
+                <button type="submit" name="register_btn" class="btn btn-primary">Register Now</button>
               </div>
             </form>
 

@@ -1,7 +1,6 @@
 <?php 
-  session_start();
-  include('./config/dbcon.php');
-  include('./includes/header.php')
+  include('authentication.php');
+  include('includes/header.php');
 ?>
     
 <div class="container-fluid px-4 my-2">

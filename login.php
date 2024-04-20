@@ -1,5 +1,6 @@
 <?php 
   session_start();
+  include('redirectuser.php');
   include('includes/header.php');
   include('includes/navbar.php')
 ?>

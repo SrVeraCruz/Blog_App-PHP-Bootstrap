@@ -20,7 +20,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">My Profile</a></li>
-              <li><a class="dropdown-item" href="logout.php">LogOut</a></li>
+              <li>
+                <?php include('logoutbutton.php') ?>
+              </li>
             </ul>
           </li>
         <?php else : ?>

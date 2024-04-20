@@ -22,8 +22,10 @@
         exit(0);
 
       } else {
+        $pass_hash = password_hash($password,PASSWORD_DEFAULT);
+
         $user_query = "INSERT INTO users (fname,lname,email,password) 
-        VALUES ('$fname','$lname','$email','$password')";
+        VALUES ('$fname','$lname','$email','$pass_hash')";
         $user_query_run = mysqli_query($con,$user_query);
 
         if($user_query_run) {

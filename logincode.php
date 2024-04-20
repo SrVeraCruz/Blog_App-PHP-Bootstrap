@@ -37,6 +37,7 @@
         ];
         
         if($_SESSION['auth_role'] == '1') {
+          $_SESSION['auth_admin_id'] = $user_data['id'];
           $_SESSION['message'] = "Welcome to Dashboard";
           header('Location: admin/index.php');
           exit(0);

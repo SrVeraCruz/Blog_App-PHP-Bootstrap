@@ -18,6 +18,7 @@
   <ol class="breadcrumb mb-4">
       <li class="breadcrumb-item active">Dashboard</li>
       <li class="breadcrumb-item active">User</li>
+      <li class="breadcrumb-item active">Edit</li>
   </ol>
   <div class="row">
 
@@ -28,7 +29,7 @@
         </div>
         <div class="card-body">
 
-          <form action="update-user.php" method="post">
+          <form action="user-code.php" method="post">
             <input type="hidden" name="user_id" value="<?= $user_id ?>">
 
             <div class="row">

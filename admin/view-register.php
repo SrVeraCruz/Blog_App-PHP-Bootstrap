@@ -22,7 +22,10 @@
 
       <div class="card">
         <div class="card-header">
-          <h4>Registered User</h4>
+          <h4>
+            Registered User
+            <a href="register-add.php" class="btn btn-primary float-end">Add Admin</a>
+          </h4>
         </div>
         <div class="card-body">
 
@@ -60,7 +63,11 @@
                       ?>
                     </td>
                     <td><a href="register-edit.php?id=<?=$user['id']?>" class="btn btn-primary" >Edit</a></td>
-                    <td><button class="btn btn-danger">delete</button></td>
+                    <td>
+                      <form action="user-code.php" method="post">
+                        <button type="submit" class="btn btn-danger" value="<?= $user['id']?>" name="user_delete">Delete</button>
+                      </form>
+                    </td>
                   </tr>
                 <?php endwhile ?>
               <?php endif ?>

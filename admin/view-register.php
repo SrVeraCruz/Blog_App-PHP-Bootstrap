@@ -29,50 +29,52 @@
         </div>
         <div class="card-body">
 
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Roles</th>
-                <th>Edit</th>
-                <th>Delete</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php if(mysqli_num_rows($users_result) == 0): ?>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
                 <tr>
-                  <th colspan="6">No Record Found</th>
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Roles</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
-              <?php else: ?>
-                <?php while($user = mysqli_fetch_assoc($users_result)): ?>
+              </thead>
+              <tbody>
+                <?php if(mysqli_num_rows($users_result) == 0): ?>
                   <tr>
-                    <td><?= $user['id'] ?></td>
-                    <td><?= $user['fname'] ?></td>
-                    <td><?= $user['lname'] ?></td>
-                    <td><?= $user['email'] ?></td>
-                    <td>
-                      <?php 
-                        if($user['role_as'] == '1') {
-                          echo 'Admin';
-                        } elseif ($user['role_as'] == '0') {
-                          echo 'User';
-                        }
-                      ?>
-                    </td>
-                    <td><a href="register-edit.php?id=<?=$user['id']?>" class="btn btn-primary" >Edit</a></td>
-                    <td>
-                      <form action="user-code.php" method="post">
-                        <button type="submit" class="btn btn-danger" value="<?= $user['id']?>" name="user_delete">Delete</button>
-                      </form>
-                    </td>
+                    <th colspan="6">No Record Found</th>
                   </tr>
-                <?php endwhile ?>
-              <?php endif ?>
-            </tbody>
-          </table>
+                <?php else: ?>
+                  <?php while($user = mysqli_fetch_assoc($users_result)): ?>
+                    <tr>
+                      <td><?= $user['id'] ?></td>
+                      <td><?= $user['fname'] ?></td>
+                      <td><?= $user['lname'] ?></td>
+                      <td><?= $user['email'] ?></td>
+                      <td>
+                        <?php 
+                          if($user['role_as'] == '1') {
+                            echo 'Admin';
+                          } elseif ($user['role_as'] == '0') {
+                            echo 'User';
+                          }
+                        ?>
+                      </td>
+                      <td><a href="register-edit.php?id=<?=$user['id']?>" class="btn btn-primary" >Edit</a></td>
+                      <td>
+                        <form action="user-code.php" method="post">
+                          <button type="submit" class="btn btn-danger" value="<?= $user['id']?>" name="user_delete">Delete</button>
+                        </form>
+                      </td>
+                    </tr>
+                  <?php endwhile ?>
+                <?php endif ?>
+              </tbody>
+            </table>
+          </div>
 
         </div>
       </div>

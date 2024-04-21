@@ -19,7 +19,7 @@
       <h4 class="mt-3">Categories</h4>
       <ol class="breadcrumb mb-4">
           <li class="breadcrumb-item active">Dashboard</li>
-          <li class="breadcrumb-item active">Categories</li>
+          <li class="breadcrumb-item active">Category</li>
           <li class="breadcrumb-item active">Add</li>
       </ol>
       

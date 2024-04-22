@@ -75,7 +75,7 @@
     
     } else {
       $_SESSION['message'] = 'Something Went Wrong';
-      header('Location: category-register.php');
+      header('Location: category-view.php');
       exit();
     }
   } else {

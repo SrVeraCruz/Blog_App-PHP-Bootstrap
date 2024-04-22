@@ -1,6 +1,5 @@
 <?php 
   include('authentication.php');
-  $admin_id = $_SESSION['auth_admin_id'];
   $categories_query = "SELECT * FROM categories WHERE status != '2'";
   $categories_result = mysqli_query($con,$categories_query);
 

@@ -24,5 +24,12 @@
     padding: 0 5rem;
     margin-bottom: 1.5rem !important;
   }
+}
 
+.underline {
+  width: 3.3rem;
+  height: .25rem;
+  background-color: red;
+  margin-bottom: 1.25rem;
+  border-radius: .1rem;
 }

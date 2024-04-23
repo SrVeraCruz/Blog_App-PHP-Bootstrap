@@ -1,5 +1,4 @@
 <?php 
-  session_start();
   include('redirectuser.php');
   include('includes/header.php');
   include('includes/navbar.php')
@@ -14,7 +13,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3>Hello</h3>
+            <h3>Home Page</h3>
           </div>
           <div class="card-body">
 

@@ -56,7 +56,7 @@
                       <td><?= $post['name'] ?></td>
                       <td><?= $post['cname'] ?></td>
                       <td>
-                        <img src="../uploads/posts/<?= $post['image'] ?>" alt="<?= $post['name'] ?>" width="60px" height="60px" >
+                        <img src="../uploads/posts/<?= $post['image'] ?>" alt="<?= $post['name'] ?>" width="30px"  >
                       </td>
                       <td><?= $post['status'] == '1' ? 'Hidden' : 'Visible'?></td>
                       <td><a href="post-edit.php?id=<?=$post['id']?>" class="btn btn-primary" >Edit</a></td>

@@ -1,0 +1,28 @@
+.navbar {
+  padding: 0;
+  
+  @media (max-width: 992px) {
+    padding: .5rem;
+  }
+  
+  .nav-link {
+    display: block;
+    border-right: .05rem solid #fff;
+    padding: .6rem 1.5rem !important;
+    
+    @media (max-width: 992px) {
+      border: none;
+      border-bottom: .05rem solid #eeeeee72;
+      text-align: center;
+      padding: .8rem 1.5rem !important;
+    }
+  }
+}
+
+.navbar-nav {
+  @media (max-width: 992px) {
+    padding: 0 5rem;
+    margin-bottom: 1.5rem !important;
+  }
+
+}

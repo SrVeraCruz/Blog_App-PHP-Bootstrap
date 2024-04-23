@@ -59,7 +59,7 @@
               </div>
               <div class="col-md-12 mb-3">
                 <label>Description</label>
-                <textarea name="description" required maxlength="191" class="form-control" rows="4"></textarea>
+                <textarea name="description" id="summernote" required maxlength="191" class="form-control" rows="4"></textarea>
               </div>
               <div class="col-md-12 mb-3">
                 <label>Meta Title</label>

@@ -1,7 +1,7 @@
 <?php 
 
   session_start();
-  include('admin/config/dbcon.php');
+  include('includes/config.php');
 
   if(isset($_POST['login_btn'])) {
     $email = mysqli_real_escape_string($con,$_POST['email']);

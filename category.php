@@ -1,6 +1,33 @@
 <?php 
+  include('includes/config.php');
+
+  if(isset($_GET['title'])){      
+    $slug = mysqli_real_escape_string($con,$_GET['title']);
+
+    $meta_category_query = "SELECT meta_title,meta_description,meta_keyword FROM categories WHERE slug = '$slug' LIMIT 1";
+    $meta_category_result = mysqli_query($con,$meta_category_query);
+    
+    if(mysqli_num_rows($meta_category_result) > 0) {
+      $meta_category_data = mysqli_fetch_assoc($meta_category_result);
+      
+      $page_title = $meta_category_data['meta_title'];
+      $meta_description = $meta_category_data['meta_description'];
+      $meta_keyword = $meta_category_data['meta_keyword'];
+
+    } else {
+      $page_title = "Category Page";
+      $meta_description = "Category page description bloggin website";
+      $meta_keywords = "html, php, laravel, react js, vue js";
+    }
+  
+  } else {
+    $page_title = "Category Page";
+    $meta_description = "Category page description bloggin website";
+    $meta_keywords = "html, php, laravel, react js, vue js";
+  }
+
   include('includes/header.php');
-  include('includes/navbar.php')
+  include('includes/navbar.php');
 ?>
 
 <div class="py-5">
@@ -10,15 +37,13 @@
 
         <?php if(isset($_GET['title'])) : ?>
           <?php 
-            $category_title = $_GET['title'];
-          
             $slug = mysqli_real_escape_string($con,$_GET['title']);
 
-            $category_query = "SELECT id,slug FROM categories WHERE slug = '$slug'";
+            $category_query = "SELECT id,slug FROM categories WHERE slug = '$slug' LIMIT 1";
             $category_result = mysqli_query($con,$category_query);
-            $category_data = mysqli_fetch_assoc($category_result);
             
             if(mysqli_num_rows($category_result) > 0) {
+              $category_data = mysqli_fetch_assoc($category_result);
               $category_id = $category_data['id'];
               $posts_query = "SELECT category_id,name,slug,created_at FROM posts WHERE category_id = '$category_id'";
               $posts_result = mysqli_query($con,$posts_query);

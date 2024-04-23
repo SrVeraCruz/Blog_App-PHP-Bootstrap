@@ -1,4 +1,31 @@
 <?php 
+  include('includes/config.php');
+
+  if(isset($_GET['title'])){      
+    $slug = mysqli_real_escape_string($con,$_GET['title']);
+
+    $meta_post_query = "SELECT * FROM posts WHERE slug = '$slug' LIMIT 1";
+    $meta_post_result = mysqli_query($con,$meta_post_query);
+    
+    if(mysqli_num_rows($meta_post_result) > 0) {
+      $meta_post_data = mysqli_fetch_assoc($meta_post_result);
+      
+      $page_title = $meta_post_data['meta_title'];
+      $meta_description = $meta_post_data['meta_description'];
+      $meta_keyword = $meta_post_data['meta_keyword'];
+
+    } else {
+      $page_title = "Post Page";
+      $meta_description = "Post page description bloggin website";
+      $meta_keywords = "html, php, laravel, react js, vue js";
+    }
+  
+  } else {
+    $page_title = "Post Page";
+    $meta_description = "Post page description bloggin website";
+    $meta_keywords = "html, php, laravel, react js, vue js";
+  }
+
   include('includes/header.php');
   include('includes/navbar.php')
 ?>
@@ -9,9 +36,7 @@
       <div class="col-md-9">
 
         <?php if(isset($_GET['title'])) : ?>
-          <?php 
-            $post_title = $_GET['title'];
-          
+          <?php         
             $slug = mysqli_real_escape_string($con,$_GET['title']);
 
             $post_query = "SELECT * FROM posts WHERE slug = '$slug'";

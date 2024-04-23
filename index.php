@@ -1,4 +1,10 @@
 <?php 
+
+  $page_title = "Home Page";
+  $meta_description = "Home page description bloggin website";
+  $meta_keywords = "html, php, laravel, react js, vue js";
+
+  include('includes/config.php');
   include('includes/header.php');
   include('includes/navbar.php');
 ?>
@@ -43,7 +49,7 @@
         <h3 class="text-dark">Vera Cruz Company</h3>
         <div class="underline"></div>
         <p>
-          Vera Cruz Tecnologia da Informação Uma empresa inovadora que oferece soluções tecnológicas personalizadas para empresas em todo o mundo. Com uma equipe experiente e apaixonada, a Vera Cruz cria sistemas robustos, desenvolve aplicativos móveis e implementa estratégias de segurança cibernética. Nossa missão é impulsionar o sucesso dos nossos clientes por meio da excelência tecnológica.
+          <strong>Vera Cruz Tecnologia</strong> da Informação Uma empresa inovadora que oferece soluções tecnológicas personalizadas para empresas em todo o mundo. Com uma equipe experiente e apaixonada, a Vera Cruz cria sistemas robustos, desenvolve aplicativos móveis e implementa estratégias de segurança cibernética. Nossa missão é impulsionar o sucesso dos nossos clientes por meio da excelência tecnológica.
         </p>
       </div>
   </div>

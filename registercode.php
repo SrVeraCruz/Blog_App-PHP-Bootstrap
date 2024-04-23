@@ -1,7 +1,7 @@
 <?php 
 
   session_start();
-  include('admin/config/dbcon.php');
+  include('includes/config.php');
 
   if(isset($_POST['register_btn'])) {
     $fname = mysqli_real_escape_string($con,$_POST['fname']);

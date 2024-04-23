@@ -1,5 +1,11 @@
 <?php 
   include('redirectuser.php');
+
+  $page_title = "Login Page";
+  $meta_description = "Login page description bloggin website";
+  $meta_keywords = "html, php, laravel, react js, vue js";
+
+  include('includes/config.php');
   include('includes/header.php');
   include('includes/navbar.php')
 ?>

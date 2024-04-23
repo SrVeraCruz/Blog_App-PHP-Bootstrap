@@ -1,9 +1,9 @@
-<div class="py-5 bg-info">
+<div class="py-5 bg-dark">
 
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h3>Vera Cruz Company</h3>
+        <h3 class="text-white">Vera Cruz Company</h3>
         <div class="underline"></div>
 
         <div><a href="" class="text-white">Home</a></div>
@@ -11,7 +11,7 @@
         <div><a href="" class="text-white">Contact Us</a></div>
       </div>
       <div class="col-md-4">
-        <h3>Contact Information</h3>
+        <h3 class="text-white">Contact Information</h3>
         <div class="underline"></div>
 
         <div><a href="" class="text-white">veracruz@gmail.com</a></div>

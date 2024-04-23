@@ -85,8 +85,9 @@
                 <input type="file" name="image" class="form-control" >
               </div>
               <div class="col-md-6 mb-3">
-                <label>Status</label>
+                <label>Status</label> <br>
                 <input type="checkbox" <?= $post_data['status'] == '1' ? 'checked' : '' ?> name="status" width="4rem" height="4rem" >
+                Checked = Hidden, Unchecked = Visible
               </div>
               <div class="col-md-6 mb-3">
                 <button type="submit" name="update_post_btn" class="btn btn-primary">Update Post</button>

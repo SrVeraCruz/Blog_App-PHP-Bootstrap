@@ -62,12 +62,13 @@
                 <textarea name="meta_keyword" required maxlength="191" class="form-control" rows="4"><?= $category_data['meta_keyword']?></textarea>
               </div>
               <div class="col-md-6 mb-3">
-                <label>Navbar Status</label>
+                <label>Navbar Status</label> <br>
                 <input type="checkbox" <?= $category_data['navbar_status'] == '1' ? 'checked' : '' ?> name="navbar_status" width="4rem" height="4rem" >
               </div>
               <div class="col-md-6 mb-3">
-                <label>Status</label>
+                <label>Status</label> <br>
                 <input type="checkbox" <?= $category_data['status'] == '1' ? 'checked' : '' ?> name="status" width="4rem" height="4rem" >
+                Checked = Hidden, Unchecked = Visible
               </div>
               <div class="col-md-6 mb-3">
                 <button type="submit" name="update_category_btn" class="btn btn-primary">Update Category</button>

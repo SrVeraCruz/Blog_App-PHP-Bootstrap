@@ -4,7 +4,7 @@
   if(isset($_GET['title'])){      
     $slug = mysqli_real_escape_string($con,$_GET['title']);
 
-    $meta_category_query = "SELECT meta_title,meta_description,meta_keyword FROM categories WHERE slug = '$slug' LIMIT 1";
+    $meta_category_query = "SELECT meta_title,meta_description,meta_keyword FROM categories WHERE slug = '$slug' AND status = '0' LIMIT 1";
     $meta_category_result = mysqli_query($con,$meta_category_query);
     
     if(mysqli_num_rows($meta_category_result) > 0) {
@@ -39,13 +39,13 @@
           <?php 
             $slug = mysqli_real_escape_string($con,$_GET['title']);
 
-            $category_query = "SELECT id,slug FROM categories WHERE slug = '$slug' LIMIT 1";
+            $category_query = "SELECT id,slug FROM categories WHERE slug = '$slug' AND status = '0' LIMIT 1";
             $category_result = mysqli_query($con,$category_query);
             
             if(mysqli_num_rows($category_result) > 0) {
               $category_data = mysqli_fetch_assoc($category_result);
               $category_id = $category_data['id'];
-              $posts_query = "SELECT category_id,name,slug,created_at FROM posts WHERE category_id = '$category_id'";
+              $posts_query = "SELECT category_id,name,slug,created_at FROM posts WHERE category_id = '$category_id' AND status = '0'";
               $posts_result = mysqli_query($con,$posts_query);
 
               if(mysqli_num_rows($posts_result) > 0) {

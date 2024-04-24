@@ -7,7 +7,6 @@
     unset($_SESSION['auth']);
     unset($_SESSION['auth_role']);
     unset($_SESSION['auth_user']);
-    unset($_SESSION['auth_admin_id']);
 
     $_SESSION['message'] = "Logged Out Successfully";
     

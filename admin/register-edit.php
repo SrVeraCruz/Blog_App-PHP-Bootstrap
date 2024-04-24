@@ -1,5 +1,7 @@
 <?php 
   include('authentication.php');
+  include('middleware/superadminAuth.php');
+
   if(isset($_GET['id'])) {
     $user_id = $_GET['id'];
   }

@@ -4,7 +4,7 @@
   include('config/dbcon.php');
 
   if(isset($_SESSION['auth'])) {
-    if($_SESSION['auth_role'] != '1') {
+    if($_SESSION['auth_role'] != '1' && $_SESSION['auth_role'] != '2') {
       $_SESSION['message'] = 'No Permission to Access Dashboard';
       header('Location: ../index.php');
       exit();

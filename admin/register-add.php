@@ -1,5 +1,7 @@
 <?php 
   include('authentication.php');
+  include('middleware/superadminAuth.php');
+  
   $admin_id = $_SESSION['auth_admin_id'];
   $users_query = "SELECT * FROM users WHERE id <> '$admin_id'";
   $users_result = mysqli_query($con,$users_query);

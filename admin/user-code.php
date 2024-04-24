@@ -1,6 +1,7 @@
 <?php 
 
   include('authentication.php');
+  include('middleware/superadminAuth.php');
 
   if(isset($_POST['add_user_btn'])) {
     // Add User

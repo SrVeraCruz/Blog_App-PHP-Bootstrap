@@ -1,7 +1,9 @@
 <?php 
   include('authentication.php');
-  $admin_id = $_SESSION['auth_admin_id'];
-  $users_query = "SELECT * FROM users WHERE id <> '$admin_id'";
+  include('middleware/superadminAuth.php');
+
+  $sadmin_id = $_SESSION['auth_role'];
+  $users_query = "SELECT * FROM users WHERE id <> '$sadmin_id'";
   $users_result = mysqli_query($con,$users_query);
 
   include('includes/header.php');

@@ -1,5 +1,6 @@
 <?php 
   include('authentication.php');
+
   $categories_query = "SELECT * FROM categories WHERE status != '2'";
   $categories_result = mysqli_query($con,$categories_query);
 
@@ -36,7 +37,9 @@
                   <th>Name</th>
                   <th>Status</th>
                   <th>Edit</th>
-                  <th>Delete</th>
+                  <?php if($_SESSION['auth_role']=='2'): ?>
+                    <th>Delete</th>
+                  <?php endif ?>
                 </tr>
               </thead>
               <tbody>
@@ -51,11 +54,13 @@
                       <td><?= $category['name'] ?></td>
                       <td><?= $category['status'] == '1' ? 'Hidden' : 'Visible'?></td>
                       <td><a href="category-edit.php?id=<?=$category['id']?>" class="btn btn-primary" >Edit</a></td>
-                      <td>
-                        <form action="category-code.php" method="post">
-                          <button type="submit" class="btn btn-danger" value="<?= $category['id']?>" name="category_delete">Delete</button>
-                        </form>
-                      </td>
+                      <?php if($_SESSION['auth_role']=='2'): ?>
+                        <td>
+                          <form action="cat-superadmin-code.php" method="post">
+                            <button type="submit" class="btn btn-danger" value="<?= $category['id']?>" name="category_delete">Delete</button>
+                          </form>
+                        </td>
+                      <?php endif ?>
                     </tr>
                   <?php endwhile ?>
                 <?php endif ?>

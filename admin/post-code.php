@@ -6,7 +6,11 @@
     // Create Post
     $name = mysqli_real_escape_string($con,$_POST['name']);
     $category_id = mysqli_real_escape_string($con,$_POST['category_id']);
-    $slug = mysqli_real_escape_string($con,$_POST['slug']);
+
+    $string = preg_replace('/[^A-Za-z0-9\-]/','-',mysqli_real_escape_string($con,$_POST['slug']));
+    $final_string = preg_replace('/-+/','-',$string);
+    $slug = $final_string;
+    
     $description = mysqli_real_escape_string($con,$_POST['description']);
     $meta_title = mysqli_real_escape_string($con,$_POST['meta_title']);
     $meta_description = mysqli_real_escape_string($con,$_POST['meta_description']);
@@ -41,7 +45,11 @@
     $category_id = mysqli_real_escape_string($con,$_POST['category_id']);
     
     $name = mysqli_real_escape_string($con,$_POST['name']);
-    $slug = mysqli_real_escape_string($con,$_POST['slug']);
+
+    $string = preg_replace('/[^A-Za-z0-9\-]/','-',mysqli_real_escape_string($con,$_POST['slug']));
+    $final_string = preg_replace('/-+/','-',$string);
+    $slug = $final_string;
+    
     $description = mysqli_real_escape_string($con,$_POST['description']);
     $meta_title = mysqli_real_escape_string($con,$_POST['meta_title']);
     $meta_description = mysqli_real_escape_string($con,$_POST['meta_description']);

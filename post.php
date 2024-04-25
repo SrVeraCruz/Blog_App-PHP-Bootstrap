@@ -56,7 +56,7 @@
                       </label>
                       <hr>
                       <?php if($post['image'] != null) : ?>
-                        <img class="w-25" src="uploads/posts/<?=$post['image']?>" alt="<?=$post['name']?>">
+                        <img class="w-100" src="uploads/posts/<?=$post['image']?>" alt="<?=$post['name']?>">
                       <?php endif ?>
                       <div>
                         <p><?=$post['description']?></p>

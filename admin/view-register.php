@@ -2,8 +2,13 @@
   include('authentication.php');
   include('middleware/superadminAuth.php');
 
-  $sadmin_id = $_SESSION['auth_role'];
-  $users_query = "SELECT * FROM users WHERE id <> '$sadmin_id'";
+  $users_query = "SELECT * FROM users";
+  
+  if($_SESSION['auth_role'] == '2') {
+    $sadmin_id = $_SESSION['auth_user']['user_id'];
+    $users_query = "SELECT * FROM users WHERE id <> '$sadmin_id'";
+  }
+
   $users_result = mysqli_query($con,$users_query);
 
   include('includes/header.php');
@@ -58,11 +63,13 @@
                       <td><?= $user['email'] ?></td>
                       <td>
                         <?php 
-                          if($user['role_as'] == '1') {
+                          if($user['role_as'] == '2') {
+                            echo 'Super Admin';
+                          } elseif ($user['role_as'] == '1') {
                             echo 'Admin';
                           } elseif ($user['role_as'] == '0') {
                             echo 'User';
-                          }
+                          } 
                         ?>
                       </td>
                       <td><a href="register-edit.php?id=<?=$user['id']?>" class="btn btn-primary" >Edit</a></td>

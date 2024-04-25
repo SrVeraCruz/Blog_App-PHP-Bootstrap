@@ -1,12 +1,12 @@
 <?php 
-  include('redirectuser.php');
 
-  $page_title = "Login Page";
-  $meta_description = "Login page description bloggin website";
-  $meta_keywords = "html, php, laravel, react js, vue js";
+$page_title = "Login Page";
+$meta_description = "Login page description bloggin website";
+$meta_keywords = "html, php, laravel, react js, vue js";
 
-  include('includes/config.php');
-  include('includes/header.php');
+include('includes/config.php');
+include('includes/header.php');
+include('redirectuser.php');
   include('includes/navbar.php')
 ?>
 
@@ -19,7 +19,7 @@
 
         <div class="card">
           <div class="card-header">
-            <h3>Home Page</h3>
+            <h3>Login</h3>
           </div>
           <div class="card-body">
 

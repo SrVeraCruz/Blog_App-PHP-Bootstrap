@@ -13,6 +13,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
+        <?php include('message.php') ?>
         <h3 class="text-white">Category</h3>
         <div class="underline"></div>
       </div>

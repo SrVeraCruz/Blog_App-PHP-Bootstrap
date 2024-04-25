@@ -32,7 +32,7 @@
         <div class="card-body">
 
           <div class="table-responsive">
-            <table class="table table-bordered table-stipe">
+            <table id="myDataTable" class="table table-bordered table-stipe">
               <thead>
                 <tr>
                   <th>ID</th>
